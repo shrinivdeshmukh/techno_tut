@@ -1,0 +1,5 @@
+$ tar -zxvf hadoop-2.7.3.tar.gz
+
+$ sudo mv hadoop-2.7.3 /usr/local/hadoop
+
+// This will move the contents of hadoop-2.7.3 to hadoop directory in /usr/local folder

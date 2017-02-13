@@ -1,0 +1,1 @@
+$ sudo mv /usr/lib/jvm/java-x  /usr/local/java
