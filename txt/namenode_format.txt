@@ -1,12 +1,9 @@
 09/21/16 18:45:55 INFO namenode.NameNode: STARTUP_MSG:
 /************************************************************
 STARTUP_MSG: Starting NameNode
-STARTUP_MSG:
-host = localhost/192.168.1.11
-STARTUP_MSG:
-args = [-format]
-STARTUP_MSG:
-version = 2.6.4
+STARTUP_MSG: host = localhost/192.168.1.11
+STARTUP_MSG: args = [-format]
+STARTUP_MSG: version = 2.6.4
 ...
 ...
 09/21/16 18:45:56 INFO common.Storage: Storage directory

@@ -52,7 +52,7 @@ Licence URI: http://www.os-templates.com/template-terms
           <li><strong>$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys:</strong> Copy the public keys form id_rsa.pub to authorized_keys </li>
           <li><strong>$ chmod 0600 ~/.ssh/authorized_keys:</strong> Provide the owner with read and write permissions to authorized_keys file</li>
         </ul><br>
-        <li><strong>JAVA INSTALLATION</strong></li>
+        <li id="java_inst"><strong>JAVA INSTALLATION</strong></li>
         <iframe src="txt/java.txt" width="500px" height="45px"></iframe><br><br>
         <li><strong>MAKING JAVA AVAILABLE TO ALL USERS</strong></li>
         Please enter the java version instead of -x in the following command: 
@@ -105,11 +105,11 @@ Licence URI: http://www.os-templates.com/template-terms
       </p>
       <br>
       <ol>
-        <h1><li><b>STANDALONE MODE</b></li></h1>
+        <h1><li id="standalone"><b>STANDALONE MODE</b></li></h1>
         <p>Set the hadoop environment variables by appending the following line at the end of ~/.bashrc file:</p>
         <iframe src="txt/standalone_hdp.txt" width="750px" height="280px"></iframe>
 <br> <br>
-        <h1><li><b>PSEUDO-DISTRIBUTED MODE</b></li></h1>
+        <h1><li id="pseudo-distributed"><b>PSEUDO-DISTRIBUTED MODE</b></li></h1>
         <p>The following steps will guide you for setting up hadoop in pseudo-distributed mode:</p>
         <p><h1><strong>STEP 1: SETTING UP HADOOP</strong></h1>
         <ul>
@@ -165,7 +165,23 @@ Licence URI: http://www.os-templates.com/template-terms
         Set up the namenode using the command “hdfs namenode -format” as follows:
         <ul><li><b>$ hdfs namenode -format</b></li></ul>
         You'll get a similar message on successful namenode setup:
-        <iframe src="txt/namenode_format.txt" width="550px" height="350px"></iframe>
+        </p>
+        <iframe src="txt/namenode_format.txt" width="550px" height="300px"></iframe>
+        <p><h1><strong>STEP 4: STARTING THE CLUSTER:</strong></h1>
+        Issue the following commands one by one onto your terminal: 
+        <ol>
+          <b><li>$ start-dfs.sh</li></b>
+          <b><li>$ start yarn.sh</li></b>
+          <b><li>$ jps</li></b>
+        </ol>
+        On issuing the last command, if you see the followng services running, then hadoop configuration is successful:
+        </p>
+        <iframe src="txt/jps.txt" width="450px" height="120px"></iframe>
+        <p><h1><strong>STEP 5: ACCESSING HADOOP ON BROWSER</strong></h1>
+        <ul>
+        <li><b>Enter <i>https://localhost:50070</i> in your browser. You could see the overview of your cluster.</b><br></li>
+        <li><b>Enter <i>https://localhost:8088</i> in your browser. You can access all your cluster applications.</b></li>
+        </ul>
         </p>
         
       </ol>
@@ -297,22 +313,23 @@ Licence URI: http://www.os-templates.com/template-terms
       <h6>Lorem ipsum dolor</h6>
       <nav class="sdb_holder">
         <ul>
-          <li><a href="#">Navigation - Level 1</a></li>
-          <li><a href="#">Navigation - Level 1</a>
-            <ul>
+          <li><a href="index.php">Home</a></li>
+          <li><a href="#java_inst">Java Installation</a>
+            <!--<ul>
               <li><a href="#">Navigation - Level 2</a></li>
               <li><a href="#">Navigation - Level 2</a></li>
-            </ul>
+            </ul>-->
           </li>
-          <li><a href="#">Navigation - Level 1</a>
-            <ul>
+          <li><a href="#standalone">Hadoop Standalone setup</a>
+            <!--<ul>
               <li><a href="#">Navigation - Level 2</a></li>
               <li><a href="#">Navigation - Level 2</a>
                 <ul>
                   <li><a href="#">Navigation - Level 3</a></li>
                   <li><a href="#">Navigation - Level 3</a></li>
-                </ul>
+                </ul>-->
               </li>
+            <li><a href="#pseudo-distributed">Hadoop Pseudo-Distributed Setup</a></li>
             </ul>
           </li>
           <li><a href="#">Navigation - Level 1</a></li>
