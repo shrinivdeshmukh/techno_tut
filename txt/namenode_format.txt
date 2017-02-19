@@ -1,0 +1,20 @@
+09/21/16 18:45:55 INFO namenode.NameNode: STARTUP_MSG:
+/************************************************************
+STARTUP_MSG: Starting NameNode
+STARTUP_MSG:
+host = localhost/192.168.1.11
+STARTUP_MSG:
+args = [-format]
+STARTUP_MSG:
+version = 2.6.4
+...
+...
+09/21/16 18:45:56 INFO common.Storage: Storage directory
+/home/hadoop/hdfs/namenode has been successfully formatted.
+09/21/16 18:45:56 INFO namenode.NNStorageRetentionManager: Going to
+retain 1 images with txid >= 0
+09/21/16 18:45:56 INFO util.ExitUtil: Exiting with status 0
+09/21/16 18:45:56 INFO namenode.NameNode: SHUTDOWN_MSG:
+/************************************************************
+SHUTDOWN_MSG: Shutting down NameNode at localhost/192.168.1.11
+************************************************************/

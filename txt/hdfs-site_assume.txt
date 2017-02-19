@@ -1,0 +1,10 @@
+dfs.replication (data replication value) = 1
+
+(In the below given path /hadoop/ is the user name.
+hdfs/namenode is the directory created by hdfs file system.)
+
+namenode path = //home/hadoop/hdfs/namenode
+
+(hdfs/datanode is the directory created by hdfs file system.)
+
+datanode path = //home/hadoop/hdfs/datanode

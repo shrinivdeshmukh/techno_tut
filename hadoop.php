@@ -51,14 +51,14 @@ Licence URI: http://www.os-templates.com/template-terms
           <li><strong>$ ssh-keygen -t rsa:</strong> Generates a key-value pair using SSH</li>
           <li><strong>$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys:</strong> Copy the public keys form id_rsa.pub to authorized_keys </li>
           <li><strong>$ chmod 0600 ~/.ssh/authorized_keys:</strong> Provide the owner with read and write permissions to authorized_keys file</li>
-        </ul>
+        </ul><br>
         <li><strong>JAVA INSTALLATION</strong></li>
-        <iframe src="txt/java.txt" width="500px" height="45px"></iframe>
+        <iframe src="txt/java.txt" width="500px" height="45px"></iframe><br><br>
         <li><strong>MAKING JAVA AVAILABLE TO ALL USERS</strong></li>
         Please enter the java version instead of -x in the following command: 
-        <iframe src="txt/java_local.txt" width="500px" height="45px"></iframe>
+        <iframe src="txt/java_local.txt" width="500px" height="45px"></iframe><br><br>
         <li><strong>To set up java PATH and JAVA_HOME variables:</strong> </li>
-        <iframe src="txt/java_variables.txt" width="500px" height="150px"></iframe>
+        <iframe src="txt/java_variables.txt" width="500px" height="150px"></iframe><br>
       </ol>
       <h1>HADOOP DOWNLOAD</h1>
       <p>You can download any version of hadoop above 2.0 from <a  href="http://hadoop.apache.org/releases.html" target="_blank">Apache Hadoop release page</a> or <a href="http://redrockdigimark.com/apachemirror/hadoop/common/hadoop-2.7.3/hadoop-2.7.3.tar.gz">click here</a> to download Hadoop-2.7.3 or you can use the links below to download.</p>
@@ -93,7 +93,86 @@ Licence URI: http://www.os-templates.com/template-terms
         </table>
       </div>
       <p>Once your download is complete, go to your downloads directory and execute the following commands from your terminal:</p>
-      <iframe src="txt/hdp_extract.txt" width="500px" height="150px"></iframe>
+      <iframe src="txt/hdp_extract.txt" width="650px" height="150px"></iframe>
+
+      <p>
+        <h2>HADOOP OPERATION MODES</h2>
+        <ol>
+          <li><b>Standalone Mode</b>: Initially, hadoop is by default configured to work as a single java process onto your machine.</li>
+          <li><b>Pseudo-distributed Mode</b>: In this mode, every hadoop daemon like mapreduce, yarn, etc are simulated on a single machine.</li>
+          <li><b>Distributed Mode</b>: In this mode, we have a cluster consisting of two or more machines.</li>
+        </ol>
+      </p>
+      <br>
+      <ol>
+        <h1><li><b>STANDALONE MODE</b></li></h1>
+        <p>Set the hadoop environment variables by appending the following line at the end of ~/.bashrc file:</p>
+        <iframe src="txt/standalone_hdp.txt" width="750px" height="280px"></iframe>
+<br> <br>
+        <h1><li><b>PSEUDO-DISTRIBUTED MODE</b></li></h1>
+        <p>The following steps will guide you for setting up hadoop in pseudo-distributed mode:</p>
+        <p><h1><strong>STEP 1: SETTING UP HADOOP</strong></h1>
+        <ul>
+          <li>Open bashrc file using the command: sudo gedit ~/.bashrc from your terminal</li>
+          <li>Append the following lines at the end of your bashrc file:</li>
+        </ul>
+        </p>
+        <iframe src="txt/hdp_pd_setup.txt" width="500px" height="160px"></iframe>
+        <p>
+          <ul>
+            <li>After appending the lines, execute the following command onto your terminal: <br><strong>source ~/.bashrc</strong></li>
+          </ul>
+        </p>
+        <p><h1><strong>STEP 2: CONFIGURING HADOOP</strong></h1>
+        All the hadoop configuration files are located in hadoop/etc/hadoop folder. So execute the following command in your terminal:<br><strong> <ul><li>$ cd  $HADOOP_HOME/etc/hadoop</li></ul></strong>
+        <br><b>You need to edit the following listed files to configure hadoop:</b><br><br>
+        <ol>
+          <h3><li>core-site.xml</li></h3>
+          <p>In the etc/hadoop folder, rename the below listed files:
+          <ul>
+            <li>core-site.xml.template rename to core-site.xml</li>
+            <li>hdfs-site.xml.template rename to hdfs-site.xml</li>
+            <li>mapred-site.xml.template rename to mapred-site.xml</li>
+            <li>yarn-site.xml.template rename to yarn-site.xml</li>
+          </ul>
+          <ul>
+            <li>Now create a folder named tmp in the /usr/local/hadoop folder. You can use the following command to create the directory: <br><strong>$ sudo mkdir $HADOOP_HOME/tmp</strong></li>
+            <li>Open core-site.xml file and insert the following lines between configuration tags:</li>
+          </ul>
+          
+          </p>
+          <iframe src="txt/core-site.txt" width="450px" height="220px"></iframe>
+          <br><br>
+          <h3><li>hdfs-site.xml</li></h3>
+          <p>The hdfs-site.xml file contains information such as the value of replication data, namenode path,and datanode paths of your local file systems. It means the place where you want to store the
+          Hadoop infrastructure. Let us assume the following instance:</p>
+          <iframe src="txt/hdfs-site_assume.txt" width="450px" height="220px"></iframe>
+          <br><p><b>Now open the hdfs-site.xml and add the following lines between configuration tags:</b>
+          <iframe src="txt/hdfs-site.txt" width="450px" height="420px"></iframe>
+
+          <h3><li>yarn-site.xml</li></h3>
+          <p>This file is used to configure yarn into Hadoop. Open the yarn-site.xml file and add the following
+          properties in between the configuration tags:</p>
+          <iframe src="txt/yarn-site.txt" width="450px" height="175px"></iframe>
+
+          <h3><li>mapred-site.xml</li></h3>
+          <p>This file is used to specify which MapReduce framework we are using. <b>Now open the hdfs-site.xml and add the following lines between configuration tags:</b></p>
+          <iframe src="txt/mapred-site.txt" width="450px" height="175px"></iframe>
+        </ol>
+        </p>
+
+        <p><h1><strong>STEP 3: VERIFYING HADOOP INSTALLATION:</strong></h1>
+        Set up the namenode using the command “hdfs namenode -format” as follows:
+        <ul><li><b>$ hdfs namenode -format</b></li></ul>
+        You'll get a similar message on successful namenode setup:
+        <iframe src="txt/namenode_format.txt" width="550px" height="350px"></iframe>
+        </p>
+        
+      </ol>
+
+
+
+
       <p>Dapiensociis <a href="#">temper donec auctortortis cumsan</a> et curabitur condis lorem loborttis leo. Ipsumcommodo libero nunc at in velis tincidunt pellentum tincidunt vel lorem.</p>
       <img class="imgl borderedbox inspace-5" src="images/demo/imgl.gif" alt="">
       <p>This is a W3C compliant free website template from <a href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a>. For full terms of use of this template please read our <a href="http://www.os-templates.com/template-terms">website template licence</a>.</p>

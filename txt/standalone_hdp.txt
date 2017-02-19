@@ -1,0 +1,16 @@
+export HADOOP_HOME=/usr/local/hadoop 
+
+//YOU CAN VERIFY SUCCESSFULL INSTALLATION OF HADOOP BY ISSUING THE FOLLOWING COMMAND:
+
+$ hadoop version
+
+//YOU WILL GET A MESSAGE LIKE THE ONE BELOW, IF HADOOP SETUP IS SUCCESSFUL. 
+
+Hadoop 2.6.4
+Subversion https://git-wip-us.apache.org/repos/asf/hadoop.git -r 5082c73637530b0b7e115f9625ed7fac69f937e6
+Compiled by jenkins on 2016-02-12T09:45Z
+Compiled with protoc 2.5.0
+From source with checksum 8dee2286ecdbbbc930a6c87b65cbc010
+This command was run using /usr/local/hadoop/share/hadoop/common/hadoop-common-2.6.4.jar
+
+//IF THIS MESSAGE IS NOT DISPLAYED, YOU JUST MISCONFIGURED A STEP.!!
